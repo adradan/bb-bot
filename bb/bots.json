@@ -1,0 +1,106 @@
+{
+  "cyber": {
+    "id": "6",
+    "name": "CyberAIO"
+  },
+  "cyberaio": {
+    "id": "6",
+    "name": "CyberAIO"
+  },
+  "polaris": {
+    "id": "18",
+    "name": "Polaris"
+  },
+  "nebula": {
+    "id": "96",
+    "name": "Nebula"
+  },
+  "mekaio": {
+    "id": "97",
+    "name": "MekAIO"
+  },
+  "mek": {
+    "id": "97",
+    "name": "MekAIO"
+  },
+  "balko": {
+    "id": "8",
+    "name": "Balko"
+  },
+  "dashe": {
+    "id": "4",
+    "name": "Dashe"
+  },
+  "wrath": {
+    "id": "49",
+    "name": "Wrath"
+  },
+  "splashforce": {
+    "id": "11",
+    "name": "Splashforce"
+  },
+  "tohruaio": {
+    "id": "17",
+    "name": "TohruAIO"
+  },
+  "tohru": {
+    "id": "17",
+    "name": "TohruAIO"
+  },
+  "project-destroyer": {
+    "id": "5",
+    "name": "Project Destroyer"
+  },
+  "pd": {
+    "id": "5",
+    "name": "Project Destroyer"
+  },
+  "projectdestroyer": {
+    "id": "5",
+    "name": "Project Destroyer"
+  },
+  "prism": {
+    "id": "10",
+    "name": "Prism"
+  },
+  "mekaio": {
+    "id": "24",
+    "name": "MekAIO"
+  },
+  "mek": {
+    "id": "24",
+    "name": "MekAIO"
+  },
+  "swftaio": {
+    "id": "22",
+    "name": "SwftAIO"
+  },
+  "swft": {
+    "id": "22",
+    "name": "SwftAIO"
+  },
+  "velox": {
+    "id": "91",
+    "name": "Velox"
+  },
+  "adept": {
+    "id": "30",
+    "name": "Adept"
+  },
+  "scottbot": {
+    "id": "92",
+    "name": "Scottbot"
+  },
+  "soleaio": {
+    "id": "NA",
+    "name": "SoleAIO"
+  },
+  "sole": {
+    "id": false,
+    "name": "SoleAIO"
+  },
+  "phantom": {
+    "id": false,
+    "name": "Phantom"
+  }
+}
