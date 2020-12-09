@@ -19,10 +19,6 @@
     "id": "97",
     "name": "MekAIO"
   },
-  "mek": {
-    "id": "97",
-    "name": "MekAIO"
-  },
   "balko": {
     "id": "8",
     "name": "Balko"
@@ -38,6 +34,10 @@
   "splashforce": {
     "id": "11",
     "name": "Splashforce"
+  },
+  "sf": {
+  	"id": "11",
+  	"name": "Splashforce"
   },
   "tohruaio": {
     "id": "17",
@@ -63,13 +63,9 @@
     "id": "10",
     "name": "Prism"
   },
-  "mekaio": {
-    "id": "24",
-    "name": "MekAIO"
-  },
-  "mek": {
-    "id": "24",
-    "name": "MekAIO"
+  "mekpreme": {
+  	"id": "24",
+    "name": "Mekpreme"
   },
   "swftaio": {
     "id": "22",
@@ -102,5 +98,9 @@
   "phantom": {
     "id": false,
     "name": "Phantom"
+  },
+  "help": {
+    "id": "help",
+    "name": "Help"
   }
 }

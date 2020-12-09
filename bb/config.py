@@ -1,2 +1,2 @@
 class Config:
-    TOKEN = 'NzgwOTg0NzY4NjM2MTI1MTk0.X73Cvg.rTqLXMxFVnorGGpC5XCWxbSIB8Y'
+    TOKEN = 'Nzg2Mjc4MTEzODk0MDcyMzMy.X9EEjg.vl3UhpkxHba8Yr3HnEzwIG_1pU8'
