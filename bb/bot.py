@@ -25,7 +25,7 @@ class BotBroker(commands.Cog):
     async def on_message(self, message):
         if message.author == self.bot.user:
             return
-        if not message.content.startswith('bb ') and len(message.content.split(' ')) == 1:
+        if not message.content.startswith('bb ') or len(message.content.split(' ')) == 1:
             return
         bot_info = message.content.split(' ')[1]
         bot_info = await self.get_bot(bot_info)
