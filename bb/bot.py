@@ -2,13 +2,12 @@ import discord
 from discord.ext import commands
 from .config import Config
 import json
-import aiohttp
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 from datetime import datetime
 import os
-import asyncio
+import aiohttp
 
 bot = commands.Bot(command_prefix='bb')
 bot.remove_command('help')
@@ -135,9 +134,7 @@ class BotBroker(commands.Cog):
         embed.set_footer(text='Botbroker.io Price Checker | Made by @H3yB4ws#0001')
         return embed, file
 
-
 bot.add_cog(BotBroker(bot))
-
 
 @bot.event
 async def on_ready():

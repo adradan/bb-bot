@@ -1,1 +1,1 @@
-from bb import bot
+from bb import app
