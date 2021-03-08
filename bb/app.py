@@ -10,6 +10,8 @@ from datetime import datetime
 import os
 import asyncio
 
+proxy = 'http://154.12.195.231:8822'
+#proxy_auth = aiohttp.BasicAuth('zoom8zdjq', 'uT6cMeEWUe')
 client = discord.Client()
 with open('bb/bots.json', 'r') as f:
     data = f.read()
@@ -31,6 +33,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.author == client.user or not (message.content.startswith('bb ') or len(message.content.split(' '))):
+        return
+    if not message.content.startswith('bb '):
         return
     bot_info = message.content.split(' ')[1]
     bot_info = await get_bot(bot_info)
@@ -102,7 +106,7 @@ async def create_graph(lt_year, r_year, bot_info):
 async def get_data(bot_id, membership, interval):
     url = f'https://www.botbroker.io/bots/{bot_id}/chart?key_type={membership}&days={interval}'
     async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
+        async with session.get(url, proxy=proxy) as resp:
             resp_data = await resp.json()
     return resp_data
 
