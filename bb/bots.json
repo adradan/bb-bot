@@ -87,17 +87,25 @@
     "id": "92",
     "name": "Scottbot"
   },
-  "soleaio": {
-    "id": "NA",
-    "name": "SoleAIO"
-  },
-  "sole": {
-    "id": false,
-    "name": "SoleAIO"
-  },
   "phantom": {
     "id": false,
     "name": "Phantom"
+  },
+  "dragon": {
+    "id": "98",
+    "name": "Dragon"
+  },
+  "dragonaio": {
+    "id": "98",
+    "name": "Dragon"
+  },
+  "ganesh": {
+    "id": "100",
+    "name": "Ganesh"
+  },
+  "kage": {
+    "id": "99",
+    "name": "Kage",
   },
   "help": {
     "id": "help",

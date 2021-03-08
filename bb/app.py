@@ -9,8 +9,8 @@ import matplotlib
 from datetime import datetime
 import os
 import asyncio
+import random
 
-proxy = 'http://154.12.195.231:8822'
 #proxy_auth = aiohttp.BasicAuth('zoom8zdjq', 'uT6cMeEWUe')
 client = discord.Client()
 with open('bb/bots.json', 'r') as f:
@@ -104,6 +104,7 @@ async def create_graph(lt_year, r_year, bot_info):
 
 
 async def get_data(bot_id, membership, interval):
+    proxy = Config.PROXIES[random.randrange(len(Config.PROXIES))]
     url = f'https://www.botbroker.io/bots/{bot_id}/chart?key_type={membership}&days={interval}'
     async with aiohttp.ClientSession() as session:
         async with session.get(url, proxy=proxy) as resp:
