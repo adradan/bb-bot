@@ -32,10 +32,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    print(f'Message Content: {message.content}')
-    if message.author == client.user or len(message.content.split(' ')):
-        return
-    if not message.content.startswith('bb '):
+    print(f'BB Bot: {message.content}')
+    if (message.author == client.user) or (not (message.content.startswith('bb ')) or (len(message.content.split(' ')) != 2)):
         return
     bot_info = message.content.split(' ')[1]
     bot_info = await get_bot(bot_info)
@@ -108,6 +106,7 @@ async def create_graph(lt_year, r_year, bot_info):
 async def get_data(bot_id, membership, interval, session: aiohttp.ClientSession):
     proxy = Config.PROXIES[random.randrange(len(Config.PROXIES))].split(':')
     proxy = f'http://{proxy[2]}:{proxy[3]}@{proxy[0]}:{proxy[1]}'
+
     url = f'https://www.botbroker.io/bots/{bot_id}/chart?key_type={membership}&days={interval}'
     async with session.get(url, proxy=proxy) as resp:
         resp_data = await resp.json()
@@ -150,7 +149,7 @@ async def get_avg(price_data):
 
 async def help(message):
     bot_json = bot_list.keys()
-    bot_names = 'Cyber, Polaris, Nebula, Mekaio, Balko, Dashe, Wrath, Splashforce, Tohru, PD, Prism, Mekpreme, Swftaio, Velox, Adept, Scottbot, SoleAIO, Phantom'
+    bot_names = 'Cyber, Polaris, Nebula, Mekaio, Balko, Dashe, Wrath, Splashforce, Tohru, PD, Prism, Mekpreme, Swftaio, Velox, Adept, Scottbot, Phantom, Dragon, Ganesh, Kage'
     await message.channel.send(
         "```Bot Broker Sales Activity\n\nUsage:\nbb bot_name\n\nSupported Bots:\n" + bot_names + "```")
 
