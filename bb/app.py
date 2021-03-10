@@ -32,7 +32,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user or not (message.content.startswith('bb ') or len(message.content.split(' '))):
+    print(f'Message Content: {message.content}')
+    if message.author == client.user or len(message.content.split(' ')):
         return
     if not message.content.startswith('bb '):
         return
@@ -54,12 +55,13 @@ async def on_message(message):
 
 
 async def get_bot_info(bot_id, bot_info):
-    lt_year = await get_data(bot_id, 'lifetime', '365')
-    lt_week = await get_data(bot_id, 'lifetime', '7')
-    lt_day = await get_data(bot_id, 'lifetime', '1')
-    r_year = await get_data(bot_id, 'renewal', '365')
-    r_week = await get_data(bot_id, 'renewal', '7')
-    r_day = await get_data(bot_id, 'renewal', '1')
+    async with aiohttp.ClientSession() as session:
+        lt_year = await get_data(bot_id, 'lifetime', '365', session)
+        lt_week = await get_data(bot_id, 'lifetime', '7', session)
+        lt_day = await get_data(bot_id, 'lifetime', '1', session)
+        r_year = await get_data(bot_id, 'renewal', '365', session)
+        r_week = await get_data(bot_id, 'renewal', '7', session)
+        r_day = await get_data(bot_id, 'renewal', '1', session)
     lt_year.sort(key=lambda price: price[0])
     r_year.sort(key=lambda price: price[0])
     avg_dict = await set_dict([lt_year, r_year], [lt_week, r_week], [lt_day, r_day])
@@ -79,7 +81,7 @@ async def create_embed(avg, bot_info):
             embed.add_field(name=f'{membership} {key} Average', value=f'${avg[membership][key]}', inline=True)
     file = discord.File(os.path.abspath(f'{bot_id}.png'), filename='image.png')
     embed.set_image(url='attachment://image.png')
-    embed.set_footer(text='Botbroker.io Price Checker | Made by @H3yB4ws#0001')
+    embed.set_footer(text='Botbroker.io Price Checker | House of Carts')
     return embed, file
 
 
@@ -103,12 +105,12 @@ async def create_graph(lt_year, r_year, bot_info):
     return plt
 
 
-async def get_data(bot_id, membership, interval):
-    proxy = Config.PROXIES[random.randrange(len(Config.PROXIES))]
+async def get_data(bot_id, membership, interval, session: aiohttp.ClientSession):
+    proxy = Config.PROXIES[random.randrange(len(Config.PROXIES))].split(':')
+    proxy = f'http://{proxy[2]}:{proxy[3]}@{proxy[0]}:{proxy[1]}'
     url = f'https://www.botbroker.io/bots/{bot_id}/chart?key_type={membership}&days={interval}'
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url, proxy=proxy) as resp:
-            resp_data = await resp.json()
+    async with session.get(url, proxy=proxy) as resp:
+        resp_data = await resp.json()
     return resp_data
 
 
