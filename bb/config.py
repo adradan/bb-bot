@@ -1,6 +1,3 @@
 class Config:
-    TOKEN = 'Nzk5MTk3ODM2MDUwMDM4Nzk0.YAAE_A.L8nGDqA0t6t-TnTg-OD4s65r9a8'
-    PROXIES = ['45.148.15.208:63422:5fbee839cd1ef8050659d465:63f5e0b51150',
-               '45.148.15.207:63422:5fbee839cd1ef8050659d464:7ba9b1f883c7',
-               '45.148.15.209:63422:5fbee839cd1ef8050659d466:58908b1de671',
-               '45.148.15.210:63422:5fbee839cd1ef8050659d467:1c9d90a6745c']
+    TOKEN = ''
+    PROXIES = []
